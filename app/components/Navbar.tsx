@@ -11,9 +11,9 @@ type Props = { location?: string };
 
 const Navbar = ({ location }: Props) => {
   const [city, setCity] = useState("");
-  const [error, setError] = useState("");
+  const [error, setError] = useState<string>("");
 
-  const [suggestions, setSuggestions] = useState<String[]>([]);
+  const [suggestions, setSuggestions] = useState<string[]>([]);
   const [showSuggestions, setShowSuggestions] = useState<boolean>(false);
 
   const [place, setPlace] = useAtom(placeAtom);
@@ -109,12 +109,10 @@ const Navbar = ({ location }: Props) => {
                 className=""
               />
               <SuggestionBox
-                {...{
-                  showSuggestions,
-                  suggestions,
-                  handleSuggestionClick,
-                  error,
-                }}
+                showSuggestions={showSuggestions}
+                suggestions={suggestions}
+                handleSuggestionClick={handleSuggestionClick}
+                error={error}
               />
             </div>
           </section>
