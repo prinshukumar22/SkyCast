@@ -69,5 +69,15 @@ The Weather App provides the following features:
 
 1. **Clone the Repository:**
    ```bash
-   git clone <repository_url>
-   cd weather-app
+   git clone [<repository_url>](https://github.com/prinshukumar22/SkyCast/)
+   cd SkyCast
+   
+2. **Install Dependencies:**
+   ```bash
+   npm install
+
+3. **Run the Development Server:**
+   ```bash
+   npm run dev
+
+
