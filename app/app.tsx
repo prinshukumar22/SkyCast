@@ -77,6 +77,7 @@ interface WeatherData {
 
 type Props = {};
 
+//! function to fetch forecast of 5 days
 function getDailyForecasts(weatherData: any) {
   const dailyForecasts = [];
   const seenDays = new Set();
@@ -98,9 +99,11 @@ function getDailyForecasts(weatherData: any) {
 }
 
 const App = (props: Props) => {
+  //!jotai for global state management
   const [place, setPlace] = useAtom(placeAtom);
   const [loadingCity] = useAtom(loadingCityAtom);
 
+  //! useQuery to fetch data from api
   const {
     isPending: isLoading,
     error,
@@ -127,6 +130,7 @@ const App = (props: Props) => {
     ? getDailyForecasts(weatherData)
     : [];
 
+  //!error handling
   if (isLoading)
     return (
       <div className="flex items-center min-h-screen justify-center">

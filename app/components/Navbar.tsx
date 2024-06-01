@@ -62,6 +62,7 @@ const Navbar = ({ location }: Props) => {
     }
   }
 
+  //! logic to fetch current position
   function handleCurrentLocation() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(async (postiion) => {
